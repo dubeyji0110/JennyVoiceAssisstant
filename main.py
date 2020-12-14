@@ -30,52 +30,52 @@ def takeCmd():
         # pass
         talk("Sorry, I can't understand!")
         print('Listening...')
-        takeCmd()
+        run_Jenny()
     return cmd
 
 # function to execute the command
 def run_Jenny():
-    cmd = takeCmd()
-    if 'play' in cmd:
-        song = cmd[cmd.find('play')+4:]
-        # song = cmd.replace('play', '')
+    command = takeCmd()
+    if 'play' in command:
+        song = command[command.find('play')+4:]
+        # song = command.replace('play', '')
         talk('Playing' + song + '...')
         pwk.playonyt(song)
 
-    elif ('who are you' in cmd) or ('what are you' in cmd):
+    elif ('who are you' in command) or ('what are you' in command):
         talk("I'am Jenny, your personal Assisstant..!")
 
-    elif ('tell me a joke' in cmd) or ('give me a joke' in cmd):
+    elif ('tell me a joke' in command) or ('give me a joke' in command):
         talk(joke.get_joke())
 
-    elif ('time' in cmd) and ('what' in cmd):
+    elif ('time' in command) and ('what' in command):
         time = datetime.datetime.now().strftime('%I:%M %p')
         talk("Current Time is: " + time)
 
-    elif ('date' in cmd) and ('what' in cmd):
+    elif ('date' in command) and ('what' in command):
         date = datetime.date.today()
         talk(date)
 
-    elif 'what' in cmd:
-        search = cmd[cmd.find('what')+8:]
+    elif 'what' in command:
+        search = command[command.find('what')+8:]
         # print(search)
         res = wiki.summary(search, 1)
         talk(res)
 
-    elif 'who' in cmd:
-        search = cmd[cmd.find('who')+7:]
+    elif 'who' in command:
+        search = command[command.find('who')+7:]
         # print(search)
         res = wiki.summary(search, 1)
         talk(res)
 
-    elif 'find' in cmd:
-        search = cmd[cmd.find('find')+5:]
+    elif 'find' in command:
+        search = command[command.find('find')+5:]
         # print(search)
         res = wiki.summary(search, 1)
         talk(res)
 
-    elif ('power off' in cmd) or ('shutdown' in cmd) or ('shut down' in cmd):
-        talk('Good Bye!')
+    elif ('power off' in command) or ('shutdown' in command) or ('shut down' in command):
+        talk('Shutting Down..., Good Bye!')
         exit()
 
     else:
