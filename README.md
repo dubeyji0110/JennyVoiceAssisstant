@@ -1,11 +1,11 @@
-'JENNY' Voice Assisstant
+'JENNY' Voice Assistant
 ==============================
 
-This is a voice assisstant build from scratch.
+This is a voice assistant build from scratch.
 
 Getting Started:
 ------------
-To try this assisstant you need to install some modules in the given sequence
+To try this assistant you need to install some modules in the given sequence
 
 - `pip install SpeechRecognition`
 - `pip install pyttsx3`
