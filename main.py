@@ -98,7 +98,7 @@ def greet():
         greeting = 'Good Afternoon!,'
     else:
         greeting = 'Good Evning!,'
-    talk(greeting + " I'am Jenny your personal assisstant!")
+    talk(greeting + " I'am Jenny your voice assistant!")
     talk("What can I do for you?")
     # print('Listening...')
 
